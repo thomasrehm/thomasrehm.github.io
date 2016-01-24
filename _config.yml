@@ -1,15 +1,17 @@
-name: Your New Jekyll Site
-description: Blogging about stuffs
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+name: "Thomas' Coding-Tagebuch"
+description: '{Über: [JavaScript&hearts;, Coding, etc.]}'
+meta_description: "Thomas Rehm blogt."
 
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
-logo: false
+logo: 'assets/images/profile.jpg'
 paginate: 15
 baseurl: /
-domain_name: 'http://yourblog-domain.com'
-google_analytics: 'UA-XXXXXXXX-X'
+domain_name: 'https://thomasrehm.github.io'
+google_analytics: 'UA-29328100-2'
 
 # Details for the RSS feed generator
-url:            'blog url'
-author:         'Your Name'
+#url:            'blog url'
+author:         'Thomas Rehm'
+
+gems: [jekyll-paginate]

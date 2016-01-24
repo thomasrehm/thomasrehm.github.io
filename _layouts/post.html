@@ -8,7 +8,6 @@ post_class: post-template
 <header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
         <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home</a>
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
     </nav>
 </header>
 
@@ -18,11 +17,13 @@ post_class: post-template
 
         <header class="post-header">
             <h1 class="post-title">{{ page.title }}</h1>
-            <section class="post-meta">                
+            <section class="post-meta">
+              {{ page.author }}
                 <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-                {% if page.categories.size > 0 %} 
-                    {{ page.categories | array_to_sentence_string | prepend: 'on ' }} 
+                {% if page.categories.size > 0 %}
+                    {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
                 {% endif %}
+                <br>
             </section>
         </header>
 
@@ -32,14 +33,14 @@ post_class: post-template
                     <img src="{{site.logo}}" alt="{{ site.name }}" />
                 {% else %}
                     <span class="blog-title">{{ site.name }}</span>
-                {%endif%} 
+                {%endif%}
             </a>
         </header> -->
-        
+
         <!-- <span class="post-meta">
             <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-            {% if page.categories.size > 0 %} 
-                {{ page.categories | array_to_sentence_string | prepend: 'on ' }} 
+            {% if page.categories.size > 0 %}
+                {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
             {% endif %}
         </span> -->
 
@@ -55,7 +56,7 @@ post_class: post-template
             <ul>
                 {% for post in site.posts %}
                     <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url }}">{{ post.title }}</a></li>
-                {% endfor %}    
+                {% endfor %}
             </ul>
         </section>
         {% endif %}
@@ -64,27 +65,47 @@ post_class: post-template
             <!-- If we want to display author's name and bio -->
             {% if site.author %}
                 <figure class="author-image">
-                    <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.png)">
+                    <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.jpg)">
                     <span class="hidden">{{site.author}}'s Picture</span></a>
                 </figure>
                 <section class="author">
                     <!-- Author Name -->
                     <h4> {{ site.author }} </h4>
                     <!-- Author Bio -->
-                    <p> 
-                        Here goes the author description. You might want to place some links too in here
-                    </p>
-                </section>                
+                    <p></p>
+                      <ul class="icons">
+                        <li>
+                          <a href="https://www.xing.com/profile/Thomas_Rehm16" target="_blank" class="icon fa-xing">
+                            <span class="label">Xing</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://de.linkedin.com/in/thomasrehm" target="_blank" class="icon fa-linkedin">
+                            <span class="label">LinkedIn</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/thomasrehm" target="_blank" class="icon fa-github">
+                            <span class="label">Github</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x74;&#x68;&#x6f;&#x6d;&#x61;&#x73;&#x2e;&#x72;&#x65;&#x68;&#x6d;&#x38;&#x39;&#x2b;&#x69;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="icon fa-envelope-o">
+                            <span class="label">Email</span>
+                          </a>
+                        </li>
+                      </ul>
+                </section>
             {% endif %}
 
             <!-- Share links section -->
             {% include share.html %}
-            
+
             <!-- Disqus comments -->
             {% if page.disqus %}
                 {% include disqus.html %}
             {% endif %}
-            
+
         </footer>
 
     </article>

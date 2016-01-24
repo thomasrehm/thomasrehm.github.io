@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Home
-cover: false
+cover: 'assets/images/bg.jpg'
+logo: 'assets/images/profile.jpg'
 about: 'about.html'
 ---
 
@@ -9,19 +10,41 @@ about: 'about.html'
     <nav class="main-nav overlay clearfix">
             {% if page.logo %}
                 <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                    <img class="author-thumb" src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
             {% endif %}
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">{{ site.name }}</h1>
             <h2 class="page-description">
-                {% if site.description %} {{ site.description }}. {% endif %}
-                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
+                {% if site.description %} {{ site.description }} {% endif %}
+                <br>
+                {% if page.about %} <a style="color:#FFF;" href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
             </h2>
         </div>
+      <ul class="icons">
+    <li>
+      <a href="https://www.xing.com/profile/Thomas_Rehm16" target="_blank" class="icon fa-xing">
+        <span class="label">Xing</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://de.linkedin.com/in/thomasrehm" target="_blank" class="icon fa-linkedin">
+        <span class="label">LinkedIn</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/thomasrehm" target="_blank" class="icon fa-github">
+        <span class="label">Github</span>
+      </a>
+    </li>
+    <li>
+      <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x74;&#x68;&#x6f;&#x6d;&#x61;&#x73;&#x2e;&#x72;&#x65;&#x68;&#x6d;&#x38;&#x39;&#x2b;&#x69;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="icon fa-envelope-o">
+        <span class="label">Email</span>
+      </a>
+    </li>
+  </ul>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
@@ -45,15 +68,15 @@ about: 'about.html'
         </section>
         <footer class="post-meta">
             {% if site.author %}
-                <img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
-                {{ site.author }}
+                <img class="author-thumb" src="/assets/images/profile.jpg" alt="Author's profile picture" nopin="nopin" />
+                {{ post.author }}
             {% endif %}
-            {% if post.categories.size > 0 %} 
-                {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
+            {% if post.categories.size > 0 %}
+                {{ post.categories | array_to_sentence_string | prepend: 'on ' }}
             {% endif %}
             <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                 {{ post.date | date_to_string }}
-            </time> 
+            </time>
         </footer>
     </article>
 

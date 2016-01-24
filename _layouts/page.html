@@ -5,7 +5,6 @@ post_class: post-template page-template
 
 <nav class="main-nav clearfix">
     <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home</a>
-    <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
 </nav>
 
 
@@ -17,7 +16,7 @@ post_class: post-template page-template
                     <img src="{{site.logo}}" alt="{{ site.name }}" />
                 {% else %}
                     <span class="blog-title">{{ site.name }}</span>
-                {%endif%} 
+                {%endif%}
             </a>
         </header> -->
 
@@ -26,7 +25,42 @@ post_class: post-template page-template
         <section class="post-content">
             {{content}}
         </section>
+        <footer class="post-footer">
+          <!-- If we want to display author's name and bio -->
+          {% if site.author %}
+          <figure class="author-image">
+            <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.jpg)">
+              <span class="hidden">{{site.author}}'s Picture</span></a>
+            </figure>
+            <section class="author" style="text-align:center; margin-right:0px !important;">
+              <!-- Author Name -->
+              <h4> {{ site.author }} </h4>
+              <!-- Author Bio -->
+              <p></p>
+              <ul class="icons">
+                <li>
+                  <a href="https://www.xing.com/profile/Thomas_Rehm16" target="_blank" class="icon fa-xing">
+                    <span class="label">Xing</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://de.linkedin.com/in/thomasrehm" target="_blank" class="icon fa-linkedin">
+                    <span class="label">LinkedIn</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/thomasrehm" target="_blank" class="icon fa-github">
+                    <span class="label">Github</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x74;&#x68;&#x6f;&#x6d;&#x61;&#x73;&#x2e;&#x72;&#x65;&#x68;&#x6d;&#x38;&#x39;&#x2b;&#x69;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="icon fa-envelope-o">
+                    <span class="label">Email</span>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            {% endif %}
 
+          </footer></main>
     </article>
-
-</main>
