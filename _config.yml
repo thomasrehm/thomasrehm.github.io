@@ -3,7 +3,7 @@ description: '{Über: [JavaScript&hearts;, Coding, etc.]}'
 meta_description: "Thomas Rehm blogt."
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 logo: 'assets/images/profile.jpg'
 paginate: 15
 baseurl: /
