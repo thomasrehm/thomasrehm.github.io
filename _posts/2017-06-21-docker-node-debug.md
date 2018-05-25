@@ -2,7 +2,7 @@
 layout: post
 title:  "Debugging of Node.js in Docker container"
 date:   2017-06-21 08:18:00
-categories: Allgemein
+categories: Quicktip
 author: Thomas Rehm
 ---
 
